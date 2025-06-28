@@ -1,18 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from "./Layout/Header";
+import Footer from "./Layout/Footer";
+import PageContent from "./Layout/PageContent";
+import HomePage from "./pages/HomePage";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
-  )
+    <Router>
+      <div className="min-h-screen w-full bg-white">
+        <Header />
+        <PageContent>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            {/* Diğer sayfalar buraya eklenebilir */}
+          </Switch>
+        </PageContent>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
