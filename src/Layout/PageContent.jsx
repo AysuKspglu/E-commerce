@@ -1,5 +1,11 @@
+import React from "react";
+
 const PageContent = ({ children }) => {
-    return <main className="px-4 py-6">{children}</main>;
+    return (
+        <main className="flex-grow w-full">
+            {children}
+        </main>
+    );
 };
 
 export default PageContent;
